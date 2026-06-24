@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backyard - High Converting Landing Page</title>
+    <style>
+        /* Resetting defaults */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: #333333;
+            font-size: 16px; /* Text size bada kiya hai */
+        }
+
+        /* ==================================================== */
+        /* 1. HERO SECTION (BADA LAYOUT WITH BACKGROUND)       */
+        /* ==================================================== */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1200') no-repeat center center/cover;
+            min-height: 90vh; /* Height barhadi hai */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 10%; /* Khula padding space */
+            gap: 60px;
+        }
+
+        .hero-left-content {
+            flex: 1.3;
+            color: #ffffff;
+        }
+
+        .hero-brand {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            color: #2ed573;
+        }
+
+        .hero-left-content h1 {
+            font-size: 52px; /* Heading badi kar di */
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 25px;
+        }
+
+        .hero-left-content p {
+            font-size: 18px; /* Paragraph bada kiya */
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .hero-inline-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-blue-outline {
+            background-color: #00a8ff;
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-transparent-outline {
+            background-color: rgba(255,255,255,0.2);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 14px 30px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+        /* Form Container Box */
+        .hero-right-form {
+            flex: 0.9;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px 35px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.2);
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .hero-right-form h3 {
+            color: white;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .hero-right-form input {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .hero-right-form .btn-submit-form {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-disclaimer {
+            font-size: 12px;
+            color: #ccc;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        /* ==================================================== */
+        /* 2. SUB-NAVBAR STRIP                                  */
+        /* ==================================================== */
+        .sub-nav-strip {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 10%;
+            background-color: #ffffff;
+            border-bottom: 2px solid #eeeeee;
+        }
+
+        .strip-logo {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .strip-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .strip-links a {
+            text-decoration: none;
+            color: #555555;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .strip-links a.active-link {
+            color: #3498db;
+        }
+
+        /* ==================================================== */
+        /* 3. MIDDLE SHOWCASE (WITH WORKSPACE IMAGES)           */
+        /* ==================================================== */
+        .mid-showcase-section {
+            display: flex;
+            align-items: center;
+            padding: 100px 10%;
+            gap: 60px;
+        }
+
+        .mid-left-visual {
+            flex: 1;
+        }
+
+        .mid-left-visual img {
+            width: 100%;
+            max-width: 550px;
+            border-radius: 6px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .mid-right-text {
+            flex: 1;
+        }
+
+        /* Choti extra image paragraph ke upar */
+        .mid-top-mini-img {
+            width: 100%;
+            max-width: 450px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .mid-right-text h2 {
+            font-size: 34px;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .mid-right-text p {
+            font-size: 16px;
+            color: #666666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .btn-blue-rect {
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+            padding: 12px 25px;
+            font-size: 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* ==================================================== */
+        /* 4. RECREATE IDEAS (BOTTOM MATRIX WITH STUDENT PIC)   */
+        /* ==================================================== */
+        .grid-intro-section {
+            padding: 100px 10%;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        .grid-intro-section h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .grid-intro-section .subtitle-text {
+            font-size: 16px;
+            color: #777;
+            margin-bottom: 60px;
+        }
+
+        .features-grid-container {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        /* Student Image Custom Design */
+        .grid-left-person-img {
+            flex: 0.9;
+        }
+
+        .grid-left-person-img img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .grid-right-cards {
+            flex: 1.4;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .mini-feature-block {
+            flex: 1 1 calc(50% - 20px);
+            display: flex;
+            gap: 20px;
+        }
+
+        .block-icon-area {
+            font-size: 30px;
+            color: #3498db;
+        }
+
+        .block-text-area h4 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .block-text-area p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* ==================================================== */
+        /* 5. RESPONSIVE MEDIA QUERIES                          */
+        /* ==================================================== */
+        @media (max-width: 1024px) {
+            .hero-section, .mid-showcase-section, .features-grid-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-left-content p, .mid-top-mini-img {
+                margin: 0 auto 30px auto;
+            }
+            .hero-inline-btns {
+                justify-content: center;
+            }
+            .hero-right-form {
+                margin: 30px auto 0 auto;
+            }
+            .mid-left-visual img, .grid-left-person-img img {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .sub-nav-strip {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .strip-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .mini-feature-block {
+                flex: 1 1 100%;
+            }
+            .hero-left-content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Main Section -->
+    <section class="hero-section">
+        <div class="hero-left-content">
+            <div class="hero-brand">Backyard</div>
+            <h1>Beautiful High Converting Landing Page</h1>
+            <p>Backyard is a modern and customizable landing page template designed to increase conversion of your product. Backyard is flexible to suit any kind of business. Try now and join with our happy customers!</p>
+            <div class="hero-inline-btns">
+                <button class="btn-blue-outline">Features</button>
+                <button class="btn-transparent-outline">Download</button>
+            </div>
+        </div>
+
+        <!-- Right Side Form Box -->
+        <div class="hero-right-form">
+            <h3>Get Started</h3>
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Email address">
+            <button class="btn-submit-form">Subscribe</button>
+            <p class="form-disclaimer">We will not share your email. Read privacy policy.</p>
+        </div>
+    </section>
+
+    <!-- White Navigation Link Strip -->
+    <div class="sub-nav-strip">
+        <div class="strip-logo">Backyard</div>
+        <ul class="strip-links">
+            <li><a href="#" class="active-link">About</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Download</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Center Apple Computer Showcase Section -->
+    <section class="mid-showcase-section">
+        <div class="mid-left-visual">
+            <!-- Left side Desktop Screen Setup -->
+            <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=600" alt="Apple Desktop Layout">
+        </div>
+        <div class="mid-right-text">
+            <!-- Text ke upar wali extra workspace picture jo aapne kahi thi -->
+            <img class="mid-top-mini-img" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=500" alt="Workspace Concept">
+            
+            <h2>Optimize performance through advanced targeting solutions</h2>
+            <p>Good marketing makes the company look smart. Great marketing makes the customer feel smart. Never doubt a small group of thoughtful, committed people can change the world. Indeed, it is the only thing that ever has. The best way to predict the future is to create it.</p>
+            <button class="btn-blue-rect">Learn More</button>
+        </div>
+    </section>
+
+    <!-- Recreate Ideas Bottom Grid Section -->
+    <section class="grid-intro-section">
+        <h2>Recreate your ideas and gain more success</h2>
+        <p class="subtitle-text">Increase your user loyalty by maintaining mutual communication and nurturing your online community.</p>
+
+        <div class="features-grid-container">
+            <!-- Right side par simple student look photo -->
+            <div class="grid-left-person-img">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=400" alt="Student High School Girl">
+            </div>
+
+            <!-- Features Grid Matrix Box -->
+            <div class="grid-right-cards">
+                <div class="mini-feature-block">
+                    <div class="block-icon-area">📋</div>
+                    <div class="block-text-area">
+                        <h4>Marketing Strategy</h4>
+                        <p>Good marketing makes the company look smart. Great marketing makes the customer feel smart.</p>
+                    </div>
+                </div>
+                <div class="mini-feature-block">
+                    <div class="block-icon-area">📦</div>
+                    <div class="block-text-area">
+                        <h4>App Monetization</h4>
+                        <p>Content builds relationships. Relationships are built on trust. Trust drives revenue.</p>
+                    </div>
+                </div>
+                <div class="mini-feature-block">
+                    <div class="block-icon-area">🛒</div>
+                    <div class="block-text-area">
+                        <h4>Store Optimization</h4>
+                        <p>Never doubt a small group of thoughtful committed people can change the world.</p>
+                    </div>
+                </div>
+                <div class="mini-feature-block">
+                    <div class="block-icon-area">👥</div>
+                    <div class="block-text-area">
+                        <h4>User Management</h4>
+                        <p>Instead of using technology to automate processes, think about using technology to enhance human interaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
